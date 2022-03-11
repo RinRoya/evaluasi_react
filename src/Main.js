@@ -32,7 +32,7 @@ export default function Ujian() {
     axios.post('http://localhost:3001/trello', {name: value})
     .then(()=>{
       getData()
-      e.target.submit.value=''
+      e.target.submit.value='aa'
     })
   }
   // untuk menghapus data
