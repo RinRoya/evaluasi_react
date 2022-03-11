@@ -55,7 +55,7 @@ export default function Ujian() {
   const cobaKartu = () => {
     return (<div>
       <form onSubmit={handleSubmit}>
-        <div>Aplikasi Trello</div>
+        <div>Tambahkan Note</div>
         <input name='submit'></input>
         <button>Tambah</button>
       </form>
@@ -73,17 +73,13 @@ export default function Ujian() {
     </div>)
   }
 
-  const cobaKlik = (e) => {
-    e.preventDefault()
-    console.log("aa")
-  }
 
   return (
     // submit data
     <div>
       Aplikasi Trello
       <form>
-        <button onClick={cobaKlik}>Tambah Kartu</button>
+        <button onClick={cobaKartu}>Tambah Kartu</button>
       </form>
       <hr></hr>
       {cobaKartu()}
@@ -106,7 +102,7 @@ export default function Ujian() {
                     <form key={index} onSubmit={handleEdit}>
                       <input name='save' defaultValue={value.name} /> <button>save</button>
                     </form>
-                    : <div key={index}>{value.name} <button onClick={() => handleDelete(value.id)}>hapus</button> <button onClick={() => setEdit(index)}> edit</button>
+                    : <div key={index}>{value.name} <span onClick={() => handleDelete(value.id)}>[hapus]</span> <span onClick={() => setEdit(index)}> [edit]</span>
                     </div>)
               })}
             </div>
